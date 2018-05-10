@@ -1,0 +1,17 @@
+.vs/
+bin/
+obj/
+Release/
+Debug/
+*.filters
+*.user
+*.layout
+*.obj
+*.OBJ
+*.map
+*.MAP
+*.exe
+*.EXE
+*.com
+*.COM
+*.tap

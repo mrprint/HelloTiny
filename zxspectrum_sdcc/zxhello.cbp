@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="zxhello" />
+		<Option pch_mode="2" />
+		<Option compiler="sdcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/zxhello.ihx" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="sdcc" />
+				<Compiler>
+					<Add option="--debug" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/zxhello.ihx" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="sdcc" />
+				<Compiler>
+					<Add option="--opt-code-speed" />
+					<Add option="--fomit-frame-pointer" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="--no-std-crt0" />
+			<Add option="-mz80" />
+			<Add option="--code-loc 26000" />
+		</Compiler>
+		<ExtraCommands>
+			<Add after="hex2bin.exe -p 0 -s 6590 -e bin $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_FILENAME)" />
+			<Add after="bin2tap.EXE -o $(TARGET_OUTPUT_BASENAME).tap -a 26000 -b -r 26000 $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
+		</ExtraCommands>
+		<Unit filename="test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="zxromservices.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="zxromservices.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
