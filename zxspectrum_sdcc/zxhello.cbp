@@ -31,11 +31,14 @@
 			<Add option="-mz80" />
 			<Add option="--code-loc 26000" />
 		</Compiler>
+		<Linker>
+			<Add directory="../../../Program Files/SDCC/lib/z80" />
+		</Linker>
 		<ExtraCommands>
 			<Add after="hex2bin.exe -p 0 -s 6590 -e bin $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_FILENAME)" />
 			<Add after="bin2tap.EXE -o $(TARGET_OUTPUT_BASENAME).tap -a 26000 -b -r 26000 $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
 		</ExtraCommands>
-		<Unit filename="test.c">
+		<Unit filename="zxhello.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="zxromservices.c">
@@ -47,6 +50,7 @@
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />
+			<fortran_project />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

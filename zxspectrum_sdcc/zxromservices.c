@@ -1,5 +1,5 @@
 
-void zx_output_chanel_set(unsigned char v)
+void zx_output_channel_set(unsigned char v)
 {
     v;
     __asm

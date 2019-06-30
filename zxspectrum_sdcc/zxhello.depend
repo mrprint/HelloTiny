@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1522643480 source:c:\projects\hellotiny\zxspectrum_sdcc\test.c
+	"zxromservices.h"
+
+1522529881 c:\projects\hellotiny\zxspectrum_sdcc\zxromservices.h
+
+1522529829 source:c:\projects\hellotiny\zxspectrum_sdcc\zxromservices.c
+
